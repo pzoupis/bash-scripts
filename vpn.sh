@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sudo bash
 
 # Directory of wireguard .conf files
 search_dir=/etc/wireguard
