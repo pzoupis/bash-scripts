@@ -25,6 +25,22 @@ for entry in ${arr[@]};
     fi
 }
 
+# Ask to terminate active connections
+if [ $active_connections_counter -gt 0 ]; then
+    read -p "Do you want to terminate active connections? (y/n) " response
+    case $response in
+        [yY] ) 
+            for entry in ${active_connections[@]};
+            {
+                wg-quick down $entry
+            }
+        ;;
+        [nN] ) echo no;
+        ;;
+        * ) echo wrong;;
+    esac
+fi
+
 # Display available connections for the user to choose
 PS3='Select vpn connection: '
 options=${arr[*]}
