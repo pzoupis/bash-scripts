@@ -14,9 +14,15 @@ do
 done
 
 # Check for active wireguard connections
+active_connections=()
+active_connections_counter=0
 for entry in ${arr[@]};
 {
-    [[ $(ip a) =~ $entry ]] && echo $entry is active
+    if [[ $(ip a) =~ $entry ]]; then
+        echo $entry is active
+        ((active_connections_counter++))
+        active_connections+=($entry)
+    fi
 }
 
 # Display available connections for the user to choose
