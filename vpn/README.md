@@ -13,6 +13,17 @@ and uses
 
 The ```wireguard``` package is required.
 
+# Installation
+
+### Manually
+Clone the repository and copy the file ```vpn.sh``` in a directory that is added to the ```$PATH```.
+```bash
+git clone https://github.com/pzoupis/bash-scripts.git
+cd bash-scripts/vpn
+mkdir - ~/.local/bin
+cp vpn.sh ~/.local/bin/vpn
+```
+
 # Usage
 
 ### Activate a wireguard connection
