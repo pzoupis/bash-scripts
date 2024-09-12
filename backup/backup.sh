@@ -55,7 +55,7 @@ _backup_backup()
     select opt in "${backup_location_array[@]}"; do
         set -a
         . $environment_variables_directory/$opt.env
-        restic backup --files-from ~/Documents/AppFiles/restic/includes --skip-if-unchanged
+        restic backup --files-from ~/Documents/AppFiles/restic/includes --exclude-file ~/Documents/AppFiles/restic/excludes --skip-if-unchanged
         break
     done
 }
