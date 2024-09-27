@@ -39,7 +39,7 @@ _backup_usage()
 _backup_backup()
 {
     # Directory of files with restic environment variables
-    environment_variables_directory=~/Documents/AppFiles/restic
+    environment_variables_directory=~/AppFiles/restic
 
     files_array=()
     backup_location_array=()
@@ -59,7 +59,7 @@ _backup_backup()
     select opt in "${backup_location_array[@]}"; do
         set -a
         . $environment_variables_directory/$opt.env
-        restic backup --files-from ~/Documents/AppFiles/restic/includes --exclude-file ~/Documents/AppFiles/restic/excludes --skip-if-unchanged
+        restic backup --files-from ~/AppFiles/restic/includes --exclude-file ~/AppFiles/restic/excludes --skip-if-unchanged
         break
     done
 }
@@ -67,7 +67,7 @@ _backup_backup()
 _backup_snapshots()
 {
     # Directory of files with restic environment variables
-    environment_variables_directory=~/Documents/AppFiles/restic
+    environment_variables_directory=~/AppFiles/restic
 
     files_array=()
     backup_location_array=()
@@ -95,7 +95,7 @@ _backup_snapshots()
 _backup_manual()
 {
     # Directory of files with restic environment variables
-    environment_variables_directory=~/Documents/AppFiles/restic
+    environment_variables_directory=~/AppFiles/restic
 
     files_array=()
     backup_location_array=()
